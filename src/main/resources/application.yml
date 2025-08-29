@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: hexex
+  datasource:
+    url: jdbc:postgresql://localhost:5432/hexex
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+lean:
+  payment:
+    api:
+      client-id: ${LEAN_PAYMENT_CLIENT_ID:5b7f431e-5972-4642-b9c8-f48d7bdb5d48}
+      client-secret: ${LEAN_PAYMENT_CLIENT_SECRET:35623766343331652d353937322d3436}
+      webhook-secret: ${LEAN_WEBHOOK_SECRET:84UXsugkS8OLYsMWM8EepPc4X5cwu5YT}
+      payout-source-id: ${LEAN_PAYOUT_SOURCE_ID:b1d61046-67a8-49a5-afc4-7af755e8c5e9}
+      tpp-customer-ids: ${LEAN_TPP_CUSTOMER_IDS:6f3d3e13-e3bc-4129-9a8d-7a26f75a5c7b}
+      prefix: ${LEAN_API_PREFIX:}
+      domain: ${LEAN_PAYMENT_API_URL:sandbox.leantech.me}
+      url: https://${lean.payment.api.prefix}${lean.payment.api.domain}
+      auth-url: https://auth.${lean.payment.api.domain}
